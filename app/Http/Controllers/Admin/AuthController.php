@@ -15,7 +15,7 @@ class AuthController extends Controller
      * Show admin login form
      * Purpose: Display the login page with our brand design
      */
-    public function showLogin()
+    public function showLoginForm()
     {
         return view('admin.auth.login');
     }
@@ -95,26 +95,19 @@ class AuthController extends Controller
     {
         $admin = Auth::guard('admin')->user();
 
-        // Get dashboard statistics
+        // Get dashboard statistics (simplified for now)
         $stats = [
-            'projects' => \App\Models\Project::count(),
-            'published_projects' => \App\Models\Project::where('status', 'published')->count(),
-            'news_articles' => \App\Models\NewsArticle::count(),
-            'published_articles' => \App\Models\NewsArticle::where('status', 'published')->count(),
-            'media_files' => \App\Models\MediaFile::count(),
+            'projects' => 0, // Will be updated when Project model is ready
+            'published_projects' => 0,
+            'news_articles' => 0,
+            'published_articles' => 0,
+            'media_files' => 0,
             'total_admins' => Admin::where('is_active', true)->count(),
         ];
 
-        // Get recent activities
-        $recent_projects = \App\Models\Project::with('creator')
-                                            ->latest()
-                                            ->take(5)
-                                            ->get();
-
-        $recent_articles = \App\Models\NewsArticle::with('creator')
-                                                 ->latest()
-                                                 ->take(5)
-                                                 ->get();
+        // Get recent activities (empty for now)
+        $recent_projects = collect(); // Empty collection
+        $recent_articles = collect(); // Empty collection
 
         return view('admin.dashboard', compact('admin', 'stats', 'recent_projects', 'recent_articles'));
     }

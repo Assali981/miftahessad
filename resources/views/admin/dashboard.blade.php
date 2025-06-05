@@ -127,9 +127,7 @@
         <div class="admin-card">
             <div class="flex items-center justify-between mb-4">
                 <h3 class="text-lg font-semibold text-gray-900">Recent Articles</h3>
-                <a href="{{ route('admin.news.index') }}" class="text-primary-600 hover:text-primary-700 text-sm font-medium">
-                    View all →
-                </a>
+                <span class="text-gray-400 text-sm font-medium">Coming soon</span>
             </div>
             
             @if($recent_articles->count() > 0)
@@ -158,9 +156,9 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 011 1v1m0 0l4 4v10a2 2 0 01-2 2z"></path>
                     </svg>
                     <p class="text-gray-500 text-sm">No articles yet</p>
-                    <a href="{{ route('admin.news.index') }}" class="text-primary-600 hover:text-primary-700 text-sm font-medium mt-2 inline-block">
-                        Create your first article →
-                    </a>
+                    <span class="text-gray-400 text-sm font-medium mt-2 inline-block">
+                        Coming soon
+                    </span>
                 </div>
             @endif
         </div>
@@ -182,19 +180,7 @@
                 </div>
             </a>
 
-            <a href="{{ route('admin.news.index') }}" class="flex items-center p-4 bg-accent-50 hover:bg-accent-100 rounded-lg transition-colors group">
-                <div class="p-2 bg-accent-500 rounded-lg group-hover:bg-accent-600 transition-colors">
-                    <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd" d="M2 5a2 2 0 012-2h8a2 2 0 012 2v10a2 2 0 002 2H4a2 2 0 01-2-2V5zm3 1h6v4H5V6zm6 6H5v2h6v-2z" clip-rule="evenodd"></path>
-                    </svg>
-                </div>
-                <div class="ml-3">
-                    <p class="text-sm font-medium text-gray-900">New Article</p>
-                    <p class="text-xs text-gray-500">Write news or updates</p>
-                </div>
-            </a>
-
-            <a href="{{ route('admin.media.index') }}" class="flex items-center p-4 bg-green-50 hover:bg-green-100 rounded-lg transition-colors group">
+            <a href="{{ route('admin.media') }}" class="flex items-center p-4 bg-green-50 hover:bg-green-100 rounded-lg transition-colors group">
                 <div class="p-2 bg-green-500 rounded-lg group-hover:bg-green-600 transition-colors">
                     <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
                         <path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd"></path>
@@ -206,7 +192,7 @@
                 </div>
             </a>
 
-            <a href="{{ route('admin.settings.index') }}" class="flex items-center p-4 bg-purple-50 hover:bg-purple-100 rounded-lg transition-colors group">
+            <a href="{{ route('admin.settings') }}" class="flex items-center p-4 bg-purple-50 hover:bg-purple-100 rounded-lg transition-colors group">
                 <div class="p-2 bg-purple-500 rounded-lg group-hover:bg-purple-600 transition-colors">
                     <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
                         <path fill-rule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"></path>

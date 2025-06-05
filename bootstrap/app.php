@@ -11,7 +11,14 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware) {
-        //
+        $middleware->alias([
+            'admin.auth' => \App\Http\Middleware\AdminAuth::class,
+        ]);
+
+        // Add Localization middleware to web group
+        $middleware->web(append: [
+            \App\Http\Middleware\Localization::class,
+        ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //
